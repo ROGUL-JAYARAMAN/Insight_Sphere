@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fondamento:ital@0;1&family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital@0;1&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+.welcome{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    backdrop-filter: blur(10px);
+    margin:8% 20% 0% 20%;
+}
+.User{
+   flex-grow:1 ;
+   text-align: right;
+   margin-right: 5%;
+}
+.Content{
+    flex-grow: 1;
+    flex-basis: 50%;
+    margin-left: 5%;
+}
+.Greet *{
+    color: rgb(0, 175, 187);
+    font-size: x-large;
+    font-family: "Kalam";
+    font-variant-caps: small-caps;
+}
+.Name{
+    display: flex;
+    margin : -5% 18% -4% 18%;
+}
+.Name *{
+    color: rgb(245, 147, 1);
+    font-size: xx-large; 
+    font-family: "Fondamento";
+    font-variant-caps: small-caps;
+    letter-spacing: 3px;
+    text-align: center;
+    flex-grow: 2;
+}
+.greetcontent{
+    color: rgba(0, 187, 168, 0.886);
+    font-size: large;
+    font-family: "Kalam";
+    text-align: justify;
+    text-indent: 10%;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fondamento:ital@0;1&family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital@0;1&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+.brand{
+    backdrop-filter: blur(50px);
+    display: flex;
+}
+#brand{
+    display:flex;
+    align-items: center;
+    flex-grow: 1;
+}
+#brand img{
+    height:90px;
+    width:110px;
+}
+#brand p{
+    color: darkorange;
+    font-size: x-large;
+    font-family: "Fondamento";
+    font-variant-caps: small-caps;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0%;
+    align-content: center;
+}
+.Navbar{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.Navbar li{
+    list-style-type:none ;
+    
+}
+.Navbar *{
+    text-decoration: none;
+    color: rgb(0, 255, 68);
+    font-size: large;
+    font-family: "Montserrat";
+    font-variant-caps: small-caps;
+    letter-spacing: 1.5px;
+    text-align: center;
+    align-content: center;
+    flex-grow: 0.2;
+}
+.Logout{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Logout img{
+    height:40px;
+    width:40px;
+    margin-right: 3%;
+}
+.Logout p{
+    color: darkorange;
+    font-size: large;
+    font-family: "Fondamento";
+    font-variant-caps: small-caps;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0%;
+    align-content: center; 
+}
+.Logout *{
+    text-decoration: none;
+}

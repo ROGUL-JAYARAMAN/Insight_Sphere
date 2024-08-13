@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fondamento:ital@0;1&family=Kalam:wght@300;400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital@0;1&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+body{
+    background-image: url("../Images/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+#login-content{
+    margin: 5% 8% 5% 8%;
+    backdrop-filter: blur(25px);
+}
+
+#logo-title{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0% 0% 0% 0%;
+}
+
+#Logo{
+    height:120px;
+    width:130px;
+}
+
+#title{
+    color: darkorange;
+    font-size: xxx-large;
+    font-family: "Fondamento";
+    font-variant-caps: small-caps;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0%;
+    align-content: center;
+}
+
+#login-content{
+    color: aliceblue;
+    display:flex;
+}
+#sample-img{
+    text-align: center;
+    margin : 0% 0% 10% 5%;
+}
+
+.SignIn{
+    flex-grow: 1;
+    flex-basis: 50%;
+    margin-right: 5%;
+    backdrop-filter: blue(0px);
+    background: linear-gradient(120deg, rgba(0, 0, 255, 0),rgba(33, 33, 33, 0.277),rgba(0, 183, 255, 0));
+}
+
+.sign-in{
+    flex-grow: 1;
+    flex-basis: 50%;
+    border-left: 0.5px solid rgb(225, 174, 8);
+}
+
+.sigin-form{
+    display:flex;
+    flex-direction: column;
+}
+
+#signin-tit{
+    font-family: "Fondamento";
+    font-size: xx-large;
+    letter-spacing: 2px;
+    font-variant-caps: small-caps;
+    margin-bottom: 5px;
+}
+
+.sigin-form{
+    margin: 0% 0% 5% 16%;
+}
+
+.sigin-form label{
+    font-family: "Fondamento";
+    font-size: large;
+    letter-spacing: 2px;
+    font-variant-caps: small-caps;
+    margin-top: 3dvh;
+    margin-bottom: 2dvh;
+}
+
+.sigin-form input {
+    width: 75%;
+    height: 20px;
+    background-color: rgba(0, 115, 173, 0.148);
+    color: azure
+}
+
+.sigin-form button{
+    font-family: "Fondamento";
+    font-size: large;
+    letter-spacing: 2px;
+    font-variant-caps: small-caps;
+    margin-top: 35px;
+    align-items: center;
+    width: max-content;
+    margin-left: -5dvw;
+}
+
+#content-1{
+    font-family: "Montserrat";
+    font-variant-caps: small-caps;
+    letter-spacing: 1px;
+    font-size: large;
+    margin-left:13% ;
+    margin-right: 5%;
+    text-align: justify;
+}
+
+#otherways{
+    font-family: "Fondamento";
+    font-size: medium;
+    letter-spacing: 2px;
+    font-variant-caps: small-caps;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#google-sgn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#google-sgn img{
+    width:25px;
+    height: 25px;
+    align-content: center;
+    margin-right: 5px;
+}
+#google-sgn p{
+    font-size: 13px;
+    font-family: "Montserrat";
+    letter-spacing: 0.5px;
+}
+.other-sign-icon{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: -1% 10% 3% 10%;
+}
+
+#git-sgn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#git-sgn img{
+    width:25px;
+    height: 25px;
+    align-content: center;
+    margin-right: 10px;
+}
+#git-sgn p{
+    font-size: 13px;
+    font-family: "Montserrat";
+    letter-spacing: 0.5px;
+}
+#sgnup{
+    display:flex;
+    justify-content:center ;
+    margin-bottom: 2.5%;
+}
+#sgnup p{
+    text-align: right;
+    margin-right: 5px;
+    font-size: medium;
+    letter-spacing: 0.8px;
+}
+
+
+@media  screen and (width<=1150px) {
+    .other-sign-icon{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #login-content{
+        margin: 3% 5% 3% 5%;
+        backdrop-filter: blur(100px);
+    }
+}
+
+@media screen and (width<768px){
+    #login-content{
+        margin: 1% 2% 1% 3%;
+        backdrop-filter: blur(100px);
+    }
+    #login-content{
+        color: aliceblue;
+        display:grid;
+        grid-template-columns: auto;
+    }
+    .sign-in{
+        flex-grow: 1;
+        flex-basis: 50%;
+        border: 0.5px solid rgb(225, 174, 8);
+        background-color: rgba(0, 0, 0, 0.368);
+    }
+}
+hr{
+    width:50%;
+}
+#sgnup *{
+    font-family: "zain";
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+#p2{
+    color: rgb(255, 123, 0);
+    text-decoration: none;
+}
+#content-1{
+    text-align: center;
+}
+#signin-tit {
+    text-align: center;
+}
+#signin-btn{
+    text-align: center;
+    width:max-content;
+}
+#emailAlert{
+    font-size: small;
+    margin: 0%;
+    font-family: "Roboto-Mono";
+    color:coral;
+    margin-left: 2%;
+    margin-top: 2%;
+    letter-spacing: 0.5px;
+}
+#passAlert{
+    font-size: small;
+    margin: 0%;
+    font-family: "Roboto-Mono";
+    color:coral;
+    margin-left: 2%;
+    margin-top: 2%;
+    letter-spacing: 0.5px;
+}

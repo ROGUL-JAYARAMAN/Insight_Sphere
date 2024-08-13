@@ -1,0 +1,50 @@
+#contact-page {
+    padding: 20px;
+  }
+  
+  #contact-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+#contact-form{
+    margin: 10% 30% 0% 30%;
+}
+#contact-form label{
+    color:rgba(246, 255, 0, 0.886);
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+}
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .form-input, 
+  .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background-color: #0056b3;
+  }
+  

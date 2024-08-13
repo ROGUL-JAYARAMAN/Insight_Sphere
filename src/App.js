@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import "./App.css";
+import SignIn from "../src/Login_Page/Components/Sign_In";
+import SignUp from "../src/Login_Page/Components/Sign_Up";
+import Home from "./Kanban_Board/Component/Home";
+import KanbanBoard from "./Kanban_Board/Component/KanbanBoard";
+import Contact from "./Kanban_Board/Component/Contact";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignIn />}></Route>
+          <Route path="/SignUp" element={<SignUp />}></Route>
+          <Route path="/Home" element={<Home />}></Route>
+          <Route path="/KanbanBoard" element={<KanbanBoard />}></Route>
+          <Route path="/Contact" element={<Contact />}></Route>
+        </Routes>
+    </BrowserRouter>
   );
 }
 
