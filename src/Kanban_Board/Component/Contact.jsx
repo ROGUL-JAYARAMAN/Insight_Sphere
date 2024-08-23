@@ -1,97 +1,86 @@
-//imported packages
-var express = require("express");
-var mdb = require("mongoose");
-var user = require("./models/userSchema.js");
-var cors = require("cors"); //medium for travelling connecting FE and BE
-var bodyParser = require("body-parser"); 
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import "../Stylesheets/Contact.css";
+import NavBar from './NavBar';
 
-//connecting to the packages or calling the packages
-var app = express();
-mdb.connect("mongodb://localhost:27017/UserLogin");
-var db = mdb.connection;
-db.once("open", () => {
-  console.log("Connected to MongoDB");
-});
-
-app.use(
-  cors({
-    origin: ["http://localhost:3000"],
-    credentials: true,
-    methods: ["GET", "POST"],
-  })
-);
-app.use(bodyParser.json());
-
-//signup store the details in db
-app.post("/signup", (request, response) => {
-  const { UserName, Email, FirstName, LastName, Password } = request.body;
-  console.log(request.body);
-  var newUser = new user({
-    UserName: UserName,
-    Email: Email,
-    FirstName: FirstName,
-    LastName: LastName,
-    Password: Password,
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    userEmail: '',
+    subject: '',
+    content: ''
   });
-  newUser
-    .save()
-    .then(() => {
-      response.json("Success")
-    })
-    .catch(()=>{
-      response.json("Falied_to_SignUp")
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     });
-});
+  };
 
-//signin check email and pass with db
-app.post("/signin",async(request,response)=>{
-  const {Email,Password} = request.body  //email pass coming from FE
-  const User = await user.findOne({Email:Email}) || await user.findOne({UserName:Email}) // search for the user in collection "user"
-  if(!User)
-    {
-      response.send("emailError") //send the response message to FE 
-    }
-    else{
-    const userPass=User.Password
-    if(userPass!==Password)
-    {
-      response.json("passwordError")
-    }
-    else if(userPass===Password){
-      response.json("Success")
-    }
-  }
-})
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-app.post("/emailcheck" ,async(request,response)=>{
-  const{Email}=request.body
-  const User = await user.findOne({Email:Email})
-  if(User!==null)
-  {
-      response.json("emailCheck")
-  }
-  else{
-      response.json("emailAccepted")
-  }
-})
+    emailjs.send(
+      'service_hj99b58', // Replace with your EmailJS service ID
+      'template_31y0u3f', // Replace with your EmailJS template ID
+      formData,
+      'sEAk2xVvk4Uj9OFEo' // Replace with your EmailJS user ID
+    )
+      .then((result) => {
+        console.log(result.text);
+        alert('Email successfully sent!');
+      }, (error) => {
+        console.log(error.text);
+        alert('Failed to send the email, please try again later.');
+      });
+  };
 
-app.post("/usernamecheck",async(request,response)=>{
-  const {UserName}=request.body
-  const User = await user.findOne({UserName:UserName})
-  if(User!==null)
-  {
-      response.json("usernameCheck")
-  }
-  else{
-      response.json("usernameAccepted")
-  }
-})
+  return (
+    <div id="contact-page">
+      <NavBar id="navbar" />
+      <div id="contact-form-container" className="contact-container">
+        <h2 id="contact-header">Contact Us</h2>
+        <form id="contact-form" onSubmit={sendEmail}>
+          <div id="email-group" className="form-group">
+            <label id="email-label" className="form-label" htmlFor="email-input">Email:</label>
+            <input
+              id="email-input"
+              className="form-input"
+              type="email"
+              name="userEmail"
+              value={formData.userEmail}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div id="subject-group" className="form-group">
+            <label id="subject-label" className="form-label" htmlFor="subject-input">Subject:</label>
+            <input
+              id="subject-input"
+              className="form-input"
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div id="content-group" className="form-group">
+            <label id="content-label" className="form-label" htmlFor="content-input">Content:</label>
+            <textarea
+              id="content-input"
+              className="form-textarea"
+              name="content"
+              value={formData.content}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button id="submit-button" className="form-button" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
-app.post("/getUser", async(request,response)=>{
-  const loggedin=request.body
-  const User=await user.findOne({UserName:loggedin.User}) || await user.findOne({Email:loggedin.User})
-  response.json(User)
-})
-
-app.listen(3001, ()=>{
-  console.log("Backend Server Initiated")}); //creating a local host and verifying sever status
+export default Contact;
